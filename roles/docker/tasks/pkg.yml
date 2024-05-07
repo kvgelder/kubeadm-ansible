@@ -21,9 +21,9 @@
 - name: Add Docker yum repository
   when: ansible_os_family == "RedHat"
   yum_repository:
-    name: docker-ce
+    name: Docker
     description: Docker Repository
-    file: docker-ce
+    file: docker
     baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
     enabled: yes
     gpgcheck: yes
