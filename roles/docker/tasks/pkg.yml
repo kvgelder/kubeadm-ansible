@@ -29,7 +29,6 @@
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/centos/gpg
 
-
 - name: Install docker engine (RHEL/CentOS)
   when: ansible_os_family == "RedHat"
   yum:
