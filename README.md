@@ -10,6 +10,7 @@ System requirements:
 
   - Deployment environment must have Ansible `2.4.0+`
   - Master and nodes must have passwordless SSH access
+  - ansible.posix.sysctl needs to be installed. (`ansible-galaxy collection install ansible.posix`)
 
 # Usage
 
