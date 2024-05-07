@@ -24,7 +24,7 @@
     name: Docker
     description: Docker Repository
     file: docker
-    baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
     enabled: yes
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/centos/gpg
@@ -32,7 +32,10 @@
 - name: Install docker engine (RHEL/CentOS)
   when: ansible_os_family == "RedHat"
   yum:
-    name: "docker-ce-selinux" #-{{ docker_version }}.*"
+    name: 
+      - "docker-ce-selinux" #-{{ docker_version }}.*"
+      - "docker-ce"
+      - "docker-ce-cli"
     state: present
 
 - name: Install docker engine (Debian/Ubuntu)
