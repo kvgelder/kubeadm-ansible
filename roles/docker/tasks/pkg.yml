@@ -33,7 +33,6 @@
   when: ansible_os_family == "RedHat"
   yum:
     name: "docker-ce-{{ docker_version }}.*
-      #- "docker-ce-selinux-{{ docker_version }}.*
     state: present
 
 - name: Install docker engine (Debian/Ubuntu)
