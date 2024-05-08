@@ -29,6 +29,12 @@
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/centos/gpg
 
+- name: Install libcgroup dependency
+  when: ansible_os_family == "RedHat"
+  yum:
+    name: libcgroup
+    state: present
+
 - name: Install docker engine (RHEL/CentOS)
   when: ansible_os_family == "RedHat"
   yum:
